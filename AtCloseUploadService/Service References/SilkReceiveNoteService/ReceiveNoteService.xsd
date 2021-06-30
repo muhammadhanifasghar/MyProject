@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Adeptive.ResWare.Services" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Adeptive.ResWare.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://order.silktitle.com/ResWareWebServices/ReceiveNoteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ReceiveNoteData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoordinatorTypeID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CurativeID" type="xs:int" />
+      <xs:element minOccurs="0" name="CurativeType" type="tns:ReceiveCurativeTypeEnum" />
+      <xs:element minOccurs="0" name="Documents" nillable="true" type="tns:ArrayOfReceiveNoteDocument" />
+      <xs:element name="FileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoteBody" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoteSubject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToCoordinatorID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceiveNoteData" nillable="true" type="tns:ReceiveNoteData" />
+  <xs:simpleType name="ReceiveCurativeTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PRE_CLOSING" />
+      <xs:enumeration value="POLICY" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReceiveCurativeTypeEnum" nillable="true" type="tns:ReceiveCurativeTypeEnum" />
+  <xs:complexType name="ArrayOfReceiveNoteDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceiveNoteDocument" nillable="true" type="tns:ReceiveNoteDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReceiveNoteDocument" nillable="true" type="tns:ArrayOfReceiveNoteDocument" />
+  <xs:complexType name="ReceiveNoteDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element name="DocumentBody" nillable="true" type="xs:base64Binary" />
+      <xs:element name="DocumentTypeID" type="xs:int" />
+      <xs:element name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InternalOnly" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceiveNoteDocument" nillable="true" type="tns:ReceiveNoteDocument" />
+  <xs:complexType name="ReceiveNoteResponse">
+    <xs:sequence>
+      <xs:element name="Message" nillable="true" type="xs:string" />
+      <xs:element name="ResponseCode" type="tns:ReceiveNoteResponseCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceiveNoteResponse" nillable="true" type="tns:ReceiveNoteResponse" />
+  <xs:simpleType name="ReceiveNoteResponseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="INVALID_LOGIN" />
+      <xs:enumeration value="INVALID_FILE_NUMBER" />
+      <xs:enumeration value="DOWN_FOR_MAINTENANCE" />
+      <xs:enumeration value="NOTE_ERROR" />
+      <xs:enumeration value="DOCUMENT_ERROR" />
+      <xs:enumeration value="SECURITY_ERROR" />
+      <xs:enumeration value="UNEXPECTED_ERROR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReceiveNoteResponseCode" nillable="true" type="tns:ReceiveNoteResponseCode" />
+</xs:schema>

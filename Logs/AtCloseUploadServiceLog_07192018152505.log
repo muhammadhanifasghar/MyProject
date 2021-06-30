@@ -1,0 +1,17 @@
+7/19/2018 3:25:06 PM Log Dir = D:\Development\AtClose\UploadServiceLatest\AtClose Upload Service Logs
+7/19/2018 3:25:06 PM Starting service
+7/19/2018 3:25:06 PM URL = https://bpo-uat.visionetsystems.com/vtpIntegratorOnline/InboundServlet?integrator=AtClose&userId=atclose&password=st@t123
+7/19/2018 3:25:07 PM WFGURL = https://uat.wfgls.com/vtpIntegratorOnline/InboundServlet?integrator=ValuTrustStat&userId=valutrust&password=st@t123
+7/19/2018 3:25:07 PM WFGURL = https://uat.wfgls.com/vtpIntegratorOnline/InboundServlet?integrator=ValuTrustStat&userId=valutrust&password=st@t123
+7/19/2018 3:25:07 PM Listen Path = D:\Development\AtClose\UploadServiceLatest\Scan
+7/19/2018 3:25:07 PM Processed Path = D:\Development\AtClose\UploadServiceLatest\processed
+7/19/2018 3:25:08 PM Exception Path = D:\Development\AtClose\UploadServiceLatest\exception
+7/19/2018 3:25:09 PM Polling Interval = 1 mins
+7/19/2018 3:25:10 PM Temp Dir = D:\Development\AtClose\UploadServiceLatest\AtClose Upload Service Temp
+7/19/2018 3:25:11 PM MailFromAddress = atclosenotifications@visionetsystems.com
+7/19/2018 3:25:11 PM MailFromUser = atclosenotifications@visionetsystems.com
+7/19/2018 3:25:12 PM MailFromPassword = Visi@183
+7/19/2018 3:25:12 PM MailToUser1 = mike.mayhew@visionetsystems.com
+7/19/2018 3:25:13 PM MailToUser2 = 
+7/19/2018 3:25:20 PM Checking for files in: D:\Development\AtClose\UploadServiceLatest\Scan
+7/19/2018 3:25:32 PM No files found
